@@ -1,15 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
 
-/**
- * DynamicBackground v1.0.1
- * Menggunakan aset lokal bg1.webp, bg2.webp, bg3.webp (jalur relatif)
- */
 const DynamicBackground: React.FC = () => {
   const images = [
-    "bg1.webp",
-    "bg2.webp",
-    "bg3.webp"
+    "/bg1.webp",
+    "/bg2.webp",
+    "/bg3.webp"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,7 +26,7 @@ const DynamicBackground: React.FC = () => {
         <div
           key={`${img}-${index}`}
           className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[3000ms] ease-in-out ${
-            index === currentIndex ? 'opacity-40' : 'opacity-0'
+            index === currentIndex ? 'opacity-30' : 'opacity-0'
           }`}
           style={{
             backgroundImage: `url(${img})`,
@@ -40,24 +36,15 @@ const DynamicBackground: React.FC = () => {
         />
       ))}
       
-      {/* Overlay Gelap */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-900/40 to-slate-950"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-900/60 to-slate-950"></div>
       
-      {/* Grid Pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.08] pointer-events-none"
+        className="absolute inset-0 opacity-[0.05] pointer-events-none"
         style={{
           backgroundImage: `radial-gradient(circle, #3b82f6 1px, transparent 1px)`,
           backgroundSize: '40px 40px'
         }}
       ></div>
-
-      <style>{`
-        .bg-cover {
-          will-change: opacity, transform;
-          backface-visibility: hidden;
-        }
-      `}</style>
     </div>
   );
 };
