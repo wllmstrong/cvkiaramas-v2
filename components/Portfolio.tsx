@@ -2,9 +2,9 @@
 import React from 'react';
 
 // Menggunakan URL constructor agar Vite dapat melacak file di root dari dalam folder components
-const p1 = new URL('../p-1.webp', import.meta.url).href;
-const p2 = new URL('../p-2.webp', import.meta.url).href;
-const p3 = new URL('../p-3.webp', import.meta.url).href;
+const p1 = new URL('../p1.webp', import.meta.url).href;
+const p2 = new URL('../p2.webp', import.meta.url).href;
+const p3 = new URL('../p3.webp', import.meta.url).href;
 
 const projects = [
   {
