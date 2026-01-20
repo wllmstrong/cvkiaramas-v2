@@ -1,6 +1,6 @@
 
 import React from 'react';
-import aboutImg from './about.webp';
+import aboutImg from '../about.webp';
 
 const About: React.FC = () => {
   return (
@@ -33,6 +33,9 @@ const About: React.FC = () => {
                 src={aboutImg} 
                 alt="Operasional CV Kiara Mas" 
                 className="w-full h-full object-cover min-h-[400px]"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = "https://placehold.co/600x400/007bff/ffffff?text=About+Kiara+Mas";
+                }}
               />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-slate-900 p-8 rounded-[2rem] shadow-2xl text-white transform -rotate-3 border border-slate-800">

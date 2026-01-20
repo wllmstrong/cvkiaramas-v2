@@ -1,9 +1,14 @@
 
 {
+  "cleanUrls": true,
   "rewrites": [
-    { 
-      "source": "/((?!.*\\.).*)", 
-      "destination": "/index.html" 
+    {
+      "source": "/(.*\\.(webp|jpg|jpeg|png|svg|gif|ico|js|css))$",
+      "destination": "/$1"
+    },
+    {
+      "source": "/((?!.*\\.).*)",
+      "destination": "/index.html"
     }
   ]
 }

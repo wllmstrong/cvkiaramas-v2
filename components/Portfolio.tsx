@@ -1,8 +1,8 @@
 
 import React from 'react';
-import p1 from './p1.webp';
-import p2 from './p2.webp';
-import p3 from './p3.webp';
+import p1 from '../p1.webp';
+import p2 from '../p2.webp';
+import p3 from '../p3.webp';
 
 const projects = [
   {
@@ -46,10 +46,12 @@ const Portfolio: React.FC = () => {
                   src={project.image} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   alt={project.title}
-                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = `https://placehold.co/800x500/007bff/ffffff?text=${encodeURIComponent(project.title)}`;
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                
                 <div className="absolute bottom-4 left-4">
                    <span className="px-3 py-1 bg-blue-600/90 backdrop-blur-sm text-white text-[9px] font-black uppercase tracking-wider rounded-full shadow-lg">
                     {project.category}
@@ -61,7 +63,6 @@ const Portfolio: React.FC = () => {
                 <h3 className="text-xl font-extrabold text-slate-900 mb-4 leading-tight group-hover:text-blue-600 transition-colors">
                   {project.title}
                 </h3>
-                
                 <div className="mt-auto pt-5 border-t border-slate-50 flex items-center justify-between">
                   <div className="flex items-center gap-2 text-slate-500 text-[11px] font-semibold italic">
                     <svg className="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
