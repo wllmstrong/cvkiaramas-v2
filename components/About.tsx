@@ -27,9 +27,8 @@ const About: React.FC = () => {
           </div>
           <div className="relative order-1 lg:order-2">
             <div className="rounded-3xl overflow-hidden shadow-2xl transform lg:rotate-2 transition-transform hover:rotate-0 duration-500 bg-slate-100">
-              {/* Gambar ini sekarang mengarah ke file lokal Anda */}
               <img 
-                src="/about.webp" 
+                src="about.webp" 
                 alt="Proses Kerja CV Kiara Mas" 
                 className="w-full h-64 md:h-auto object-cover min-h-[300px]"
                 onError={(e) => {

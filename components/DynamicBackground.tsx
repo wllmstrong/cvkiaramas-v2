@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 
 /**
  * DynamicBackground v1.0.1
- * Menggunakan aset lokal /bg1.webp, /bg2.webp, /bg3.webp
+ * Menggunakan aset lokal bg1.webp, bg2.webp, bg3.webp (jalur relatif)
  */
 const DynamicBackground: React.FC = () => {
   const images = [
-    "/bg1.webp",
-    "/bg2.webp",
-    "/bg3.webp"
+    "bg1.webp",
+    "bg2.webp",
+    "bg3.webp"
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
