@@ -1,9 +1,11 @@
 
 {
   "cleanUrls": true,
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/((?!.*\\.(?:webp|jpg|jpeg|png|svg|gif|ico|js|css|json|txt)$|api/).*)",
+      "source": "/((?!.*\\.(?:webp|jpg|jpeg|png|svg|gif|ico|js|css|json|txt|woff2|ttf|otf)$|api/).*)",
       "destination": "/index.html"
     }
   ]
