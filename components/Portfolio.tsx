@@ -1,10 +1,8 @@
 
 import React from 'react';
-
-// Menggunakan URL constructor agar Vite dapat melacak file di root dari dalam folder components
-const p1 = new URL('../p1.webp', import.meta.url).href;
-const p2 = new URL('../p2.webp', import.meta.url).href;
-const p3 = new URL('../p3.webp', import.meta.url).href;
+import p1 from './p1.webp';
+import p2 from './p2.webp';
+import p3 from './p3.webp';
 
 const projects = [
   {
@@ -43,7 +41,6 @@ const Portfolio: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div key={index} className="group flex flex-col bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              {/* Image Container: Fixed Aspect Ratio */}
               <div className="relative aspect-[16/10] overflow-hidden bg-slate-200">
                 <img 
                   src={project.image} 
@@ -51,7 +48,6 @@ const Portfolio: React.FC = () => {
                   alt={project.title}
                   loading="lazy"
                 />
-                {/* Overlay: Diperhalus agar tidak menutupi gambar */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
                 
                 <div className="absolute bottom-4 left-4">

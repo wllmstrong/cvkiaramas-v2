@@ -1,9 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
-
-const bg1 = new URL('../bg1.webp', import.meta.url).href;
-const bg2 = new URL('../bg2.webp', import.meta.url).href;
-const bg3 = new URL('../bg3.webp', import.meta.url).href;
+import bg1 from './bg1.webp';
+import bg2 from './bg2.webp';
+import bg3 from './bg3.webp';
 
 const DynamicBackground: React.FC = () => {
   const images = [bg1, bg2, bg3];

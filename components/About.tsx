@@ -1,7 +1,6 @@
 
 import React from 'react';
-
-const aboutImg = new URL('../about.webp', import.meta.url).href;
+import aboutImg from './about.webp';
 
 const About: React.FC = () => {
   return (
