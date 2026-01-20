@@ -1,5 +1,6 @@
 
 import React from 'react';
+import aboutImg from '../about.webp';
 
 const About: React.FC = () => {
   return (
@@ -18,7 +19,7 @@ const About: React.FC = () => {
                 CV. Kiara Mas adalah perusahaan spesialis yang berdedikasi tinggi dalam menangani masalah kebocoran bangunan, kolam limbah industri, hingga proteksi struktur beton menggunakan teknologi terkini.
               </p>
               <p>
-                Sejak 2010, kami telah dipercaya sebagai aplikator resmi produk-produk <span className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-4">Fosroc</span> dan sistem semen base berkualitas tinggi untuk memastikan properti Anda bebas dari rembesan air.
+                Sejak 2010, kami telah dipercaya sebagai aplikator resmi produk-produk <span className="font-bold text-blue-700 underline decoration-blue-300 underline-offset-4">Fosroc</span> dan sistem semen base berkualitas tinggi.
               </p>
               <div className="bg-slate-50 p-5 rounded-2xl border-l-4 border-blue-600 italic text-sm">
                 "Fokus utama kami adalah memberikan solusi teknis yang akurat, memperbaiki sumber masalah secara profesional."
@@ -28,12 +29,9 @@ const About: React.FC = () => {
           <div className="relative order-1 lg:order-2">
             <div className="rounded-3xl overflow-hidden shadow-xl transform lg:rotate-1 bg-slate-100">
               <img 
-                src="/about.webp" 
+                src={aboutImg} 
                 alt="Proses Kerja CV Kiara Mas" 
                 className="w-full h-auto object-cover min-h-[250px]"
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://placehold.co/600x400/003366/white?text=Tentang+Kami';
-                }}
               />
             </div>
             <div className="absolute -bottom-4 -right-2 bg-blue-700 p-5 rounded-2xl shadow-lg text-white animate-bounce-subtle">

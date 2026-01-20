@@ -1,12 +1,11 @@
 
 import React, { useState, useEffect } from 'react';
+import bg1 from '../bg1.webp';
+import bg2 from '../bg2.webp';
+import bg3 from '../bg3.webp';
 
 const DynamicBackground: React.FC = () => {
-  const images = [
-    "/bg1.webp",
-    "/bg2.webp",
-    "/bg3.webp"
-  ];
+  const images = [bg1, bg2, bg3];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -24,7 +23,7 @@ const DynamicBackground: React.FC = () => {
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-slate-950">
       {images.map((img, index) => (
         <div
-          key={`${img}-${index}`}
+          key={index}
           className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[3000ms] ease-in-out ${
             index === currentIndex ? 'opacity-30' : 'opacity-0'
           }`}
