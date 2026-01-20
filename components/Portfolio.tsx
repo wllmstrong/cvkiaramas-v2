@@ -1,8 +1,5 @@
 
 import React from 'react';
-import p1 from '../p1.webp';
-import p2 from '../p2.webp';
-import p3 from '../p3.webp';
 
 const projects = [
   {
@@ -10,21 +7,21 @@ const projects = [
     location: "PT. Panca Kraft Pratama, Tangerang",
     category: "Industrial",
     year: "2025",
-    image: p1
+    image: "/p1.webp"
   },
   {
     title: "Perbaikan Lapisan Beton Kolam Pengolahan Limbah Industri (IPAL)",
     location: "PT. Krakatau Steel, Cilegon - Banten",
     category: "Industrial",
     year: "2025",
-    image: p2
+    image: "/p2.webp"
   },
   {
     title: "Pemasangan Waterproofing Kolam Renang & Kamar Mandi",
     location: "Hotel JENG RATU, Pangandaran",
     category: "Hospitality",
     year: "2024",
-    image: p3
+    image: "/p3.webp"
   }
 ];
 
@@ -46,6 +43,7 @@ const Portfolio: React.FC = () => {
                   src={project.image} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   alt={project.title}
+                  loading="lazy"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = `https://placehold.co/800x500/007bff/ffffff?text=${encodeURIComponent(project.title)}`;

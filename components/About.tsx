@@ -1,6 +1,5 @@
 
 import React from 'react';
-import aboutImg from '../about.webp';
 
 const About: React.FC = () => {
   return (
@@ -30,7 +29,7 @@ const About: React.FC = () => {
           <div className="relative order-1 lg:order-2">
             <div className="rounded-[3rem] overflow-hidden shadow-2xl transform lg:rotate-2 bg-slate-100 border-[12px] border-white ring-1 ring-slate-100">
               <img 
-                src={aboutImg} 
+                src="/about.webp" 
                 alt="Operasional CV Kiara Mas" 
                 className="w-full h-full object-cover min-h-[400px]"
                 onError={(e) => {
