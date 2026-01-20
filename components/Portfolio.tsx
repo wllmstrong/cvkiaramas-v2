@@ -3,41 +3,37 @@ import React from 'react';
 
 const projects = [
   {
-    title: "Waterproofing Bak Penampungan / STP",
-    location: "Kawasan Industri, Bekasi",
+    title: "Repair Kebocoran Kolam IPAL & Waterproofing Coating",
+    location: "PT. Panca Kraft Pratama, Tangerang",
     category: "Industrial",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=800"
+    year: "2025",
+    image: "/p-1.webp"
   },
   {
-    title: "Proteksi Kedap Air Kolam Renang",
-    location: "Residensial Mewah, Jakarta",
+    title: "Perbaikan Lapisan Beton Kolam Pengolahan Limbah Industri (IPAL)",
+    location: "PT. Krakatau Steel, Cilegon - Banten",
+    category: "Industrial",
+    year: "2025",
+    image: "/p-2.webp"
+  },
+  {
+    title: "Pemasangan Waterproofing Kolam Renang & Kamar Mandi",
+    location: "Hotel JENG RATU, Pangandaran",
     category: "Hospitality",
-    year: "2022",
-    image: "https://images.unsplash.com/photo-1562095241-8c6714fd4178?q=80&w=800"
-  },
-  {
-    title: "Repair Struktur Beton Tangga",
-    location: "Infrastruktur Publik, Bandung",
-    category: "Construction",
-    year: "2023",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19480c5?q=80&w=800"
+    year: "-",
+    image: "/p-3.webp"
   }
 ];
 
 const Portfolio: React.FC = () => {
   return (
-    <div className="py-24 bg-white">
+    <div id="portfolio" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
           <div className="max-w-2xl">
             <span className="text-blue-600 font-bold uppercase tracking-widest text-xs mb-3 block">Rekam Jejak</span>
             <h2 className="text-4xl md:text-5xl font-black text-slate-900 leading-tight">Portofolio Unggulan</h2>
           </div>
-          <button className="text-blue-600 font-bold text-sm uppercase tracking-widest hover:text-blue-700 transition-colors flex items-center gap-2 group">
-            Lihat Semua Proyek
-            <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
-          </button>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -47,6 +43,9 @@ const Portfolio: React.FC = () => {
                 src={project.image} 
                 className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                 alt={project.title}
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = `https://placehold.co/400x500/003366/white?text=Proyek+${index+1}`;
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
               

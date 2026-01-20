@@ -26,11 +26,15 @@ const About: React.FC = () => {
             </div>
           </div>
           <div className="relative order-1 lg:order-2">
-            <div className="rounded-3xl overflow-hidden shadow-2xl transform lg:rotate-2 transition-transform hover:rotate-0 duration-500">
+            <div className="rounded-3xl overflow-hidden shadow-2xl transform lg:rotate-2 transition-transform hover:rotate-0 duration-500 bg-slate-100">
+              {/* Gambar ini sekarang mengarah ke file lokal Anda */}
               <img 
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=1000" 
-                alt="Waterproofing work" 
-                className="w-full h-64 md:h-auto object-cover"
+                src="/about.webp" 
+                alt="Proses Kerja CV Kiara Mas" 
+                className="w-full h-64 md:h-auto object-cover min-h-[300px]"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'https://placehold.co/600x400/003366/white?text=Gambar+About+Belum+Ada';
+                }}
               />
             </div>
             <div className="absolute -bottom-6 -right-0 md:-right-6 bg-blue-700 p-6 md:p-8 rounded-2xl shadow-xl text-white max-w-[200px] md:max-w-xs animate-bounce-subtle">
