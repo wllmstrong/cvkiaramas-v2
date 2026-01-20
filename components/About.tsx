@@ -1,9 +1,10 @@
 
 import React from 'react';
+import aboutImg from '../about.webp';
 
 const About: React.FC = () => {
   return (
-    <div className="py-20 md:py-28 bg-white overflow-hidden">
+    <div className="py-20 md:py-28 bg-white overflow-hidden" id="about">
       <div className="container mx-auto px-6 md:px-8">
         <div className="grid lg:grid-cols-2 gap-16 md:gap-24 items-center">
           <div className="order-2 lg:order-1">
@@ -29,7 +30,7 @@ const About: React.FC = () => {
           <div className="relative order-1 lg:order-2">
             <div className="rounded-[3rem] overflow-hidden shadow-2xl transform lg:rotate-2 bg-slate-100 border-[12px] border-white ring-1 ring-slate-100">
               <img 
-                src="/about.webp" 
+                src={aboutImg} 
                 alt="Operasional CV Kiara Mas" 
                 className="w-full h-full object-cover min-h-[400px]"
                 onError={(e) => {

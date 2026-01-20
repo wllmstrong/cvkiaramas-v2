@@ -2,9 +2,8 @@
 {
   "cleanUrls": true,
   "rewrites": [
-    { "handle": "filesystem" },
     {
-      "source": "/(.*)",
+      "source": "/((?!.*\\.(?:webp|jpg|jpeg|png|svg|gif|ico|js|css|json|txt)$|api/).*)",
       "destination": "/index.html"
     }
   ]
