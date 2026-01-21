@@ -61,14 +61,14 @@ const Portfolio: React.FC = () => {
                 <h3 className="text-xl font-extrabold text-slate-900 mb-4 leading-tight group-hover:text-blue-600 transition-colors">
                   {project.title}
                 </h3>
-                <div className="mt-auto pt-5 border-t border-slate-50 flex items-center justify-between">
-                  <div className="flex items-center gap-2 text-slate-500 text-[11px] font-semibold italic">
-                    <svg className="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="mt-auto pt-5 border-t border-slate-50 flex items-start justify-between gap-4">
+                  <div className="flex items-start gap-2 text-slate-500 text-[11px] font-semibold italic flex-grow">
+                    <svg className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                     </svg>
-                    <span className="truncate max-w-[160px]">{project.location}</span>
+                    <span className="leading-tight">{project.location}</span>
                   </div>
-                  <span className="text-slate-400 font-black text-[11px] bg-slate-50 px-2 py-1 rounded">{project.year}</span>
+                  <span className="text-slate-400 font-black text-[11px] bg-slate-50 px-2 py-1 rounded flex-shrink-0">{project.year}</span>
                 </div>
               </div>
             </div>
