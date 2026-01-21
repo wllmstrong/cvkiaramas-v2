@@ -1,8 +1,10 @@
 
 import React from 'react';
-import aboutImg from '../about.webp';
 
 const About: React.FC = () => {
+  // Menggunakan direct link yang telah dikoreksi
+  const aboutImg = "https://i.ibb.co.com/hR52ghHC/about.webp";
+
   return (
     <div className="py-20 md:py-28 bg-white overflow-hidden" id="about">
       <div className="container mx-auto px-6 md:px-8">

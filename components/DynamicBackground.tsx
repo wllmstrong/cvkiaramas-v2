@@ -1,11 +1,13 @@
 
 import React, { useState, useEffect } from 'react';
-import bg1 from '../bg1.webp';
-import bg2 from '../bg2.webp';
-import bg3 from '../bg3.webp';
 
 const DynamicBackground: React.FC = () => {
-  const images = [bg1, bg2, bg3];
+  const images = [
+    "https://i.ibb.co.com/DgRXssKJ/bg1.webp",
+    "https://i.ibb.co.com/RkdrLCfm/bg2.webp",
+    "https://i.ibb.co.com/rqL1G3P/bg3.webp"
+  ];
+  
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
