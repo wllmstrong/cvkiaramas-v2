@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 const DynamicBackground: React.FC = () => {
   const images = [
     "https://i.ibb.co.com/DgRXssKJ/bg1.webp",
-    "https://i.ibb.co.com/RkdrLCfm/bg2.webp",
+    "https://i.ibb.co.com/Q7QPTrjD/bg2.webp",
     "https://i.ibb.co.com/rqL1G3P/bg3.webp"
   ];
   
