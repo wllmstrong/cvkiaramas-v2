@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -10,6 +11,7 @@ import Team from './components/Team';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
+import ScrollToTop from './components/ScrollToTop';
 import DynamicBackground from './components/DynamicBackground';
 
 const App: React.FC = () => {
@@ -58,6 +60,7 @@ const App: React.FC = () => {
 
       {/* Floating Elements */}
       <WhatsAppButton />
+      <ScrollToTop />
     </div>
   );
 };
