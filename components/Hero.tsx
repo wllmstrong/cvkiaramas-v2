@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const Hero = () => (
@@ -12,7 +13,7 @@ const Hero = () => (
           <span className="text-blue-500 bg-clip-text">Kuat & Kedap Air</span>
         </h1>
         <p className="text-xl text-slate-300 mb-10 leading-relaxed">
-          Berpengalaman sejak 2010 menangani kebocoran gedung, kolam industri, dan proteksi struktur beton dengan teknologi terkini dari Fosroc.
+          Berpengalaman sejak 2010 menangani kebocoran bangunan, kolam renang, bak kolam IPAL industri, dan proteksi struktur beton dengan teknologi terkini dari Fosroc.
         </p>
         <div className="flex flex-wrap gap-4">
           <a href="#contact" className="px-8 py-4 bg-blue-600 text-white font-bold rounded-xl hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:scale-105 active:scale-95">
