@@ -35,7 +35,12 @@ const About: React.FC = () => {
                 alt="Operasional CV Kiara Mas" 
                 className="w-full h-full object-cover min-h-[400px]"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://placehold.co/600x400/007bff/ffffff?text=About+Kiara+Mas";
+                   const target = e.target as HTMLImageElement;
+                   if (!target.src.includes('public/') && !target.src.includes('placehold.co')) {
+                      target.src = "public/about.webp";
+                   } else {
+                      target.src = "https://placehold.co/600x400/007bff/ffffff?text=About+Kiara+Mas";
+                   }
                 }}
               />
             </div>

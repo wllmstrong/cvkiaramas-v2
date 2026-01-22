@@ -46,8 +46,14 @@ const Portfolio: React.FC = () => {
                   loading="lazy"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    // Hanya tampilkan placeholder jika benar-benar gagal setelah mencoba path relatif
-                    if (!target.src.includes('placehold.co')) {
+                    // Log path yang gagal untuk debugging
+                    console.warn(`Gagal memuat: ${project.image}. Mencoba path alternatif...`);
+                    
+                    // Jika path tanpa slash gagal, coba dengan slash, jika gagal lagi pakai placeholder
+                    if (!target.src.includes('public/') && !target.src.includes('placehold.co')) {
+                       // Coba tambahkan public/ jika di environment non-build
+                       target.src = "public/" + project.image;
+                    } else if (!target.src.includes('placehold.co')) {
                        target.src = `https://placehold.co/800x500/007bff/ffffff?text=${encodeURIComponent(project.title)}`;
                     }
                   }}
