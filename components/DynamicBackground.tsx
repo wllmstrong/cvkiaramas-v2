@@ -1,16 +1,11 @@
-
 import React, { useState, useEffect } from 'react';
-// Import gambar secara eksplisit dari folder assets
-import bg1 from '../assets/bg1.webp';
-import bg2 from '../assets/bg2.webp';
-import bg3 from '../assets/bg3.webp';
+import { IMAGES } from '../constants/images';
 
 const DynamicBackground: React.FC = () => {
-  const images = [bg1, bg2, bg3];
+  const images = IMAGES.hero;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (images.length === 0) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
     }, 8000); 
@@ -24,23 +19,18 @@ const DynamicBackground: React.FC = () => {
           key={index}
           src={img}
           alt=""
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[3000ms] ease-in-out ${
-            index === currentIndex ? 'opacity-50 scale-110' : 'opacity-0 scale-100'
+          className={`absolute inset-0 w-full h-full object-cover transition-all duration-[3000ms] ease-in-out ${
+            index === currentIndex ? 'opacity-40 scale-110 blur-0' : 'opacity-0 scale-100 blur-sm'
           }`}
           style={{
-            transition: 'opacity 3000ms ease-in-out, transform 20000ms linear'
-          }}
-          onError={(e) => {
-            const target = e.target as HTMLImageElement;
-            console.error(`❌ Background Gagal: ${img}`);
-            target.style.display = 'none';
+            transition: 'opacity 3000ms ease-in-out, transform 20000ms linear, filter 3000ms ease-in-out'
           }}
         />
       ))}
       
-      {/* Overlay Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950"></div>
-      <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+      {/* Overlay Gradients - Enhanced for better contrast */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-900/40 to-slate-950"></div>
+      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
     </div>
   );
 };

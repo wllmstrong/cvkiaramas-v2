@@ -14,42 +14,22 @@ import WhatsAppButton from './components/WhatsAppButton';
 import ScrollToTop from './components/ScrollToTop';
 import DynamicBackground from './components/DynamicBackground';
 
-// Import contoh aset untuk pengecekan
-import bg1 from './assets/bg1.webp';
-import p11 from './assets/11.webp';
-
 const App: React.FC = () => {
   useEffect(() => {
-    console.log("%c🚀 KIARA MAS - PRODUCTION MODE ACTIVE", "color: white; background: #059669; padding: 4px 12px; border-radius: 4px; font-weight: bold;");
-    
-    const checkAsset = (name: string, path: string) => {
-      const img = new Image();
-      img.onload = () => console.log(`%c✅ LOADED: ${name}`, "color: #10b981;");
-      img.onerror = () => console.error(`%c❌ MISSING: ${name} (Path: ${path})`, "color: #ef4444; font-weight: bold;");
-      img.src = path;
-    };
-
-    checkAsset('Main Background', bg1);
-    checkAsset('Portfolio Image', p11);
+    console.log("%c🚀 CV. KIARA MAS - PROFILE LIVE", "color: white; background: #2563eb; padding: 6px 16px; border-radius: 8px; font-weight: 800; font-size: 14px;");
   }, []);
 
   return (
-    <div className="relative min-h-screen overflow-x-hidden">
+    <div className="relative min-h-screen overflow-x-hidden selection:bg-blue-600 selection:text-white">
       <DynamicBackground />
       <Navbar />
       
       <main>
         <Hero />
-        <div className="bg-white">
-          <About />
-        </div>
+        <About />
         <VisionMission />
-        <div className="bg-slate-50">
-          <Services />
-        </div>
-        <div className="bg-white">
-          <Portfolio />
-        </div>
+        <Services />
+        <Portfolio />
         <CaseStudies />
         <Legality />
         <Team />
