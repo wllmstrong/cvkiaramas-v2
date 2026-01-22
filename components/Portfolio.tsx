@@ -17,7 +17,7 @@ const projects = [
     image: "/p2.webp"
   },
   {
-    title: "Repair Kebocoran Kolam Renang (Residential)",
+    title: "Repair Kebocoran Kolam Renang",
     location: "Puri Bintaro PB.1 / 30 Sektor 9 – Jakarta Selatan",
     category: "Residential",
     year: "2024",
@@ -51,10 +51,12 @@ const Portfolio: React.FC = () => {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   alt={project.title}
                   loading="lazy"
+                  onLoad={() => console.log(`✅ Gambar berhasil dimuat: ${project.image}`)}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
+                    console.error(`❌ Gagal memuat: ${project.image}. Cek apakah file ada di /public${project.image}`);
+                    
                     if (!target.src.includes('placehold.co')) {
-                       console.warn(`File tidak ditemukan di path: ${project.image}. Pastikan file ada di folder public/ dan namanya persis (case-sensitive).`);
                        target.src = `https://placehold.co/800x600/007bff/ffffff?text=${encodeURIComponent(project.title)}`;
                     }
                   }}
