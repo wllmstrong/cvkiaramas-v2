@@ -1,5 +1,9 @@
 
 import React from 'react';
+import p11 from '../assets/11.webp';
+import p2 from '../assets/p2.webp';
+import p3 from '../assets/p3.webp';
+import p4 from '../assets/p4.webp';
 
 const projects = [
   {
@@ -7,28 +11,28 @@ const projects = [
     location: "PT. Panca Kraft Pratama, Tangerang",
     category: "Industrial",
     year: "2025",
-    image: "/11.webp"
+    image: p11
   },
   {
     title: "Perbaikan Lapisan Beton Kolam Pengolahan Limbah Industri (IPAL)",
     location: "PT. Krakatau Steel, Cilegon - Banten",
     category: "Industrial",
     year: "2025",
-    image: "/p2.webp"
+    image: p2
   },
   {
     title: "Repair Kebocoran Kolam Renang",
     location: "Puri Bintaro PB.1 / 30 Sektor 9 – Jakarta Selatan",
     category: "Residential",
     year: "2024",
-    image: "/p4.webp"
+    image: p4
   },
   {
     title: "Pemasangan Waterproofing Kolam Renang & Kamar Mandi",
     location: "Hotel JENG RATU, Pangandaran",
     category: "Hospitality",
     year: "2024",
-    image: "/p3.webp"
+    image: p3
   }
 ];
 
@@ -53,9 +57,9 @@ const Portfolio: React.FC = () => {
                   loading="lazy"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    console.warn(`⚠️ Gagal memuat: ${project.image}`);
+                    console.warn(`⚠️ Gagal memuat proyek ke-${index + 1}`);
                     if (!target.src.includes('placehold.co')) {
-                       target.src = `https://placehold.co/800x600/007bff/ffffff?text=Cek+File+${project.image}`;
+                       target.src = `https://placehold.co/800x600/007bff/ffffff?text=Image+Missing`;
                     }
                   }}
                 />

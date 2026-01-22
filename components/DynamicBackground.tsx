@@ -1,13 +1,12 @@
 
 import React, { useState, useEffect } from 'react';
+// Import gambar secara eksplisit dari folder assets
+import bg1 from '../assets/bg1.webp';
+import bg2 from '../assets/bg2.webp';
+import bg3 from '../assets/bg3.webp';
 
 const DynamicBackground: React.FC = () => {
-  const images = [
-    "/bg1.webp",
-    "/bg2.webp",
-    "/bg3.webp"
-  ];
-  
+  const images = [bg1, bg2, bg3];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -33,7 +32,7 @@ const DynamicBackground: React.FC = () => {
           }}
           onError={(e) => {
             const target = e.target as HTMLImageElement;
-            console.error(`❌ Background Gagal: ${target.src}`);
+            console.error(`❌ Background Gagal: ${img}`);
             target.style.display = 'none';
           }}
         />

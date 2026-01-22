@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -16,12 +16,6 @@ import ScrollToTop from './components/ScrollToTop';
 import DynamicBackground from './components/DynamicBackground';
 
 const App: React.FC = () => {
-  useEffect(() => {
-    console.log("%c🏗️ CV. KIARA MAS - Diagnostic Mode", "color: #2563eb; font-size: 20px; font-weight: bold;");
-    console.log("%cPastikan gambar Anda berada di lokasi berikut:", "color: #64748b; font-size: 14px;");
-    console.log("📁 project-root/\n  📁 public/  <-- Letakkan p1.webp, bg1.webp, dll di sini\n  📁 src/\n  📄 package.json");
-  }, []);
-
   return (
     <div className="relative min-h-screen">
       <DynamicBackground />

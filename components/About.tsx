@@ -1,9 +1,8 @@
 
 import React from 'react';
+import aboutImg from '../assets/about.webp';
 
 const About: React.FC = () => {
-  const aboutImg = "/about.webp";
-
   return (
     <div className="py-20 md:py-28 bg-white overflow-hidden" id="about">
       <div className="container mx-auto px-6 md:px-8">

@@ -28,10 +28,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# --- IMPORTANT ---
-# Pastikan folder public dan semua aset gambar (.webp, .png, .jpg) 
-# TIDAK di-ignore agar muncul di Vercel
+# --- ASSETS ---
+# Pastikan folder public dan isinya TIDAK diabaikan oleh Git
 !/public/
+!/public/**
 !*.webp
 !*.png
 !*.jpg
