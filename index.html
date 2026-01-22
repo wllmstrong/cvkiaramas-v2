@@ -4,9 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 🛡️ SECURITY GUARD: Memblokir script asing & menonaktifkan importmap liar -->
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; object-src 'none';">
-    <script type="importmap">
+    <!-- 🛡️ ANTI-INJECTION GUARD: Lapis Baja -->
+    <script>
+      (function() {
+        const getokKepala = (node) => {
+          if (node && node.tagName === 'SCRIPT' && node.type === 'importmap') {
+            node.parentNode && node.parentNode.removeChild(node);
+            console.warn('🛡️ SYSTEM: Stubborn importmap detected and TERMINATED.');
+          }
+        };
+        
+        // 1. Getok yang sudah ada (Existing)
+        document.querySelectorAll('script[type="importmap"]').forEach(getokKepala);
+        
+        // 2. Intai yang mau masuk (Future)
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((m) => {
+            if (m.addedNodes) {
+              m.addedNodes.forEach(node => {
+                if (node.nodeType === 1) { // Element node
+                  getokKepala(node);
+                  // Cek juga anak-anaknya kalau-kalau diselipkan di dalam fragment
+                  node.querySelectorAll && node.querySelectorAll('script[type="importmap"]').forEach(getokKepala);
+                }
+              });
+            }
+          });
+        });
+        
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+        
+        // 3. Double Check saat DOM siap
+        window.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('script[type="importmap"]').forEach(getokKepala);
+        });
+      })();
+    </script>
+
+    <!-- CSP: Mengizinkan gambar IMGBB dan Tailwind -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com https://esm.sh; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://i.ibb.co https://images.unsplash.com; connect-src 'self' https://esm.sh;">
+    
+    <title>Jasa Waterproofing & Perbaikan Beton - CV. KIARA MAS</title>
+    <meta name="description" content="CV. KIARA MAS spesialis jasa waterproofing & perbaikan beton sejak 2010. Solusi tuntas kebocoran bangunan!">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+          font-family: 'Plus Jakarta Sans', sans-serif; 
+          scroll-behavior: smooth; 
+          background-color: #020617;
+          margin: 0;
+        }
+        #root {
+          min-height: 100vh;
+        }
+    </style>
+<script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
@@ -17,29 +72,10 @@
   }
 }
 </script>
-    
-    <title>Jasa Waterproofing & Perbaikan Beton - CV. KIARA MAS</title>
-    <meta name="description" content="CV. KIARA MAS spesialis jasa waterproofing & perbaikan beton sejak 2010. Solusi tuntas kebocoran bangunan!">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        body { 
-          font-family: 'Plus Jakarta Sans', sans-serif; 
-          scroll-behavior: smooth; 
-          background-color: #020617;
-        }
-        #root {
-          min-height: 100vh;
-        }
-        ::selection {
-          background-color: #2563eb;
-          color: white;
-        }
-    </style>
 </head>
 <body>
     <div id="root"></div>
+    <!-- Script utama aplikasi -->
     <script type="module" src="/index.tsx"></script>
 </body>
 </html>
