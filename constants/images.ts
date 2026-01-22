@@ -19,6 +19,6 @@ export const IMAGES = {
     { local: 'https://i.ibb.co.com/jPX6g61k/p1.webp' },
     { local: 'https://i.ibb.co.com/LDHcFQLL/p2.webp' },
     { local: 'https://i.ibb.co.com/VcrkZ1BB/p3.webp' },
-    { local: 'https://i.ibb.co.com/jPX6g61k/p1.webp' } // Fallback
+    { local: 'https://i.ibb.co.com/TMpxcxvM/p4.webp' }
   ]
 };
