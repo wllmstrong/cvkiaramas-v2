@@ -17,6 +17,13 @@ const projects = [
     image: "/p2.webp"
   },
   {
+    title: "Repair Kebocoran Kolam Renang (Residential)",
+    location: "Puri Bintaro PB.1 / 30 Sektor 9 – Jakarta Selatan",
+    category: "Residential",
+    year: "2024",
+    image: "/p4.webp"
+  },
+  {
     title: "Pemasangan Waterproofing Kolam Renang & Kamar Mandi",
     location: "Hotel JENG RATU, Pangandaran",
     category: "Hospitality",
@@ -35,10 +42,10 @@ const Portfolio: React.FC = () => {
           <div className="w-16 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {projects.map((project, index) => (
-            <div key={index} className="group flex flex-col bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+            <div key={index} className="group flex flex-col bg-white rounded-[2rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+              <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
                 <img 
                   src={project.image} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -46,33 +53,34 @@ const Portfolio: React.FC = () => {
                   loading="lazy"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    // Jika path absolut pun gagal, berarti ada masalah penamaan file atau build
                     if (!target.src.includes('placehold.co')) {
-                       console.error(`Gagal total memuat gambar: ${project.image}`);
-                       target.src = `https://placehold.co/800x500/007bff/ffffff?text=${encodeURIComponent(project.title)}`;
+                       console.warn(`File tidak ditemukan di path: ${project.image}. Pastikan file ada di folder public/ dan namanya persis (case-sensitive).`);
+                       target.src = `https://placehold.co/800x600/007bff/ffffff?text=${encodeURIComponent(project.title)}`;
                     }
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
-                <div className="absolute bottom-4 left-4">
-                   <span className="px-3 py-1 bg-blue-600/90 backdrop-blur-sm text-white text-[9px] font-black uppercase tracking-wider rounded-full shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+                <div className="absolute bottom-3 left-3">
+                   <span className="px-2 py-1 bg-blue-600/90 backdrop-blur-sm text-white text-[8px] font-black uppercase tracking-wider rounded-lg shadow-lg">
                     {project.category}
                   </span>
                 </div>
               </div>
               
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-extrabold text-slate-900 mb-4 leading-tight group-hover:text-blue-600 transition-colors">
+              <div className="p-5 flex flex-col flex-grow">
+                <h3 className="text-md font-extrabold text-slate-900 mb-3 leading-tight group-hover:text-blue-600 transition-colors">
                   {project.title}
                 </h3>
-                <div className="mt-auto pt-5 border-t border-slate-50 flex items-start justify-between gap-4">
-                  <div className="flex items-start gap-2 text-slate-500 text-[11px] font-semibold italic flex-grow">
-                    <svg className="w-4 h-4 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="mt-auto pt-4 border-t border-slate-50 flex flex-col gap-2">
+                  <div className="flex items-start gap-1.5 text-slate-500 text-[10px] font-semibold italic">
+                    <svg className="w-3.5 h-3.5 text-blue-500 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                     </svg>
                     <span className="leading-tight">{project.location}</span>
                   </div>
-                  <span className="text-slate-400 font-black text-[11px] bg-slate-50 px-2 py-1 rounded flex-shrink-0">{project.year}</span>
+                  <div className="flex justify-end">
+                    <span className="text-slate-400 font-black text-[9px] bg-slate-50 px-2 py-0.5 rounded">{project.year}</span>
+                  </div>
                 </div>
               </div>
             </div>
