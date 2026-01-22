@@ -7,28 +7,28 @@ const projects = [
     location: "PT. Panca Kraft Pratama, Tangerang",
     category: "Industrial",
     year: "2025",
-    image: IMAGES.portfolio[0].fallback
+    image: IMAGES.portfolio[0].local
   },
   {
     title: "Perbaikan Lapisan Beton Kolam Pengolahan Limbah Industri (IPAL)",
     location: "PT. Krakatau Steel, Cilegon - Banten",
     category: "Industrial",
     year: "2025",
-    image: IMAGES.portfolio[1].fallback
+    image: IMAGES.portfolio[1].local
   },
   {
     title: "Repair Kebocoran Kolam Renang",
     location: "Puri Bintaro PB.1 / 30 Sektor 9 – Jakarta Selatan",
     category: "Residential",
     year: "2024",
-    image: IMAGES.portfolio[2].fallback
+    image: IMAGES.portfolio[2].local
   },
   {
     title: "Pemasangan Waterproofing Kolam Renang & Kamar Mandi",
     location: "Hotel JENG RATU, Pangandaran",
     category: "Hospitality",
     year: "2024",
-    image: IMAGES.portfolio[3].fallback
+    image: IMAGES.portfolio[3].local
   }
 ];
 
@@ -47,7 +47,7 @@ const Portfolio: React.FC = () => {
             <div key={index} className="group flex flex-col bg-white rounded-[2.5rem] overflow-hidden shadow-xl shadow-slate-200/50 border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
               <div className="relative aspect-[4/5] overflow-hidden bg-slate-200">
                 <img 
-                  src={`https://images.unsplash.com/${project.image}?auto=format&fit=crop&q=80&w=800`}
+                  src={project.image}
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-[2000ms] group-hover:scale-125"
                   alt={project.title}
                   loading="lazy"
