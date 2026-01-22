@@ -7,28 +7,28 @@ const projects = [
     location: "PT. Panca Kraft Pratama, Tangerang",
     category: "Industrial",
     year: "2025",
-    image: "/p1.webp"
+    image: "/public/11.webp"
   },
   {
     title: "Perbaikan Lapisan Beton Kolam Pengolahan Limbah Industri (IPAL)",
     location: "PT. Krakatau Steel, Cilegon - Banten",
     category: "Industrial",
     year: "2025",
-    image: "/p2.webp"
+    image: "/public/p2.webp"
   },
   {
     title: "Repair Kebocoran Kolam Renang",
     location: "Puri Bintaro PB.1 / 30 Sektor 9 – Jakarta Selatan",
     category: "Residential",
     year: "2024",
-    image: "/p4.webp"
+    image: "/public/p4.webp"
   },
   {
     title: "Pemasangan Waterproofing Kolam Renang & Kamar Mandi",
     location: "Hotel JENG RATU, Pangandaran",
     category: "Hospitality",
     year: "2024",
-    image: "/p3.webp"
+    image: "/public/p3.webp"
   }
 ];
 
@@ -53,10 +53,9 @@ const Portfolio: React.FC = () => {
                   loading="lazy"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    console.warn(`⚠️ Gambar tidak ditemukan: "${project.image}". Pastikan file ada di folder /public dan namanya huruf kecil semua.`);
-                    
+                    console.warn(`⚠️ Gagal: "${project.image}".`);
                     if (!target.src.includes('placehold.co')) {
-                       target.src = `https://placehold.co/800x600/007bff/ffffff?text=Image+Not+Found`;
+                       target.src = `https://placehold.co/800x600/007bff/ffffff?text=Cek+Path+Public`;
                     }
                   }}
                 />

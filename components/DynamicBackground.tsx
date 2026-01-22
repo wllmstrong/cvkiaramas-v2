@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 
 const DynamicBackground: React.FC = () => {
   const images = [
-    "/bg1.webp",
-    "/bg2.webp",
-    "/bg3.webp"
+    "/public/bg1.webp",
+    "/public/bg2.webp",
+    "/public/bg3.webp"
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,7 +32,7 @@ const DynamicBackground: React.FC = () => {
             transition: 'opacity 3000ms ease-in-out, transform 20000ms linear'
           }}
           onError={(e) => {
-            console.error(`❌ Background Image Gagal: "${img}". Pastikan file ada di folder /public/`);
+            console.error(`❌ Gagal: "${img}".`);
             (e.target as HTMLImageElement).style.display = 'none';
           }}
         />

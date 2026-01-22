@@ -2,7 +2,7 @@
 import React from 'react';
 
 const About: React.FC = () => {
-  const aboutImg = "/about.webp";
+  const aboutImg = "/public/about.webp";
 
   return (
     <div className="py-20 md:py-28 bg-white overflow-hidden" id="about">
@@ -36,7 +36,6 @@ const About: React.FC = () => {
                 className="w-full h-full object-cover min-h-[400px]"
                 onError={(e) => {
                    const target = e.target as HTMLImageElement;
-                   console.warn("⚠️ Gambar about.webp gagal dimuat. Cek folder /public.");
                    if (!target.src.includes('placehold.co')) {
                       target.src = "https://placehold.co/600x400/007bff/ffffff?text=About+Kiara+Mas";
                    }
