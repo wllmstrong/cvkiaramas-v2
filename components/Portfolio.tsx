@@ -24,9 +24,9 @@ const projects = [
     image: IMAGES.portfolio[2].local
   },
   {
-    title: "Pemasangan Waterproofing Kolam Renang & Kamar Mandi",
-    location: "Hotel JENG RATU, Pangandaran",
-    category: "Hospitality",
+    title: "Pemasangan Waterproofing & Civil Work",
+    location: "Project Area Jawa Barat",
+    category: "Infrastructure",
     year: "2024",
     image: IMAGES.portfolio[3].local
   }
@@ -54,7 +54,6 @@ const Portfolio: React.FC = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/20 to-transparent opacity-80"></div>
                 
-                {/* Badge Overlay */}
                 <div className="absolute top-6 right-6">
                    <span className="px-3 py-1 bg-white/10 backdrop-blur-md border border-white/20 text-white text-[9px] font-black uppercase tracking-[0.2em] rounded-full">
                     {project.year}

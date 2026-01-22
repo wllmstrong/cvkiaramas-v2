@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 🛡️ IMPORTMAP GUARD: Script ini sengaja dipasang di paling atas. 
-         Browser hanya membaca importmap PERTAMA. Semua injection di bawah ini akan diabaikan! -->
+    <!-- 🛡️ SECURITY & MODULE GUARD -->
+    <!-- Blokir importmap liar dengan memaksa browser hanya menerima map pertama yang kosong -->
     <script type="importmap">
 {
   "imports": {
@@ -32,7 +32,6 @@
         #root {
           min-height: 100vh;
         }
-        /* Custom selection color */
         ::selection {
           background-color: #2563eb;
           color: white;
