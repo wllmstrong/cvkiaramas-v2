@@ -3,9 +3,9 @@ import React, { useState, useEffect } from 'react';
 
 const DynamicBackground: React.FC = () => {
   const images = [
-    "bg1.webp",
-    "bg2.webp",
-    "bg3.webp"
+    "/bg1.webp",
+    "/bg2.webp",
+    "/bg3.webp"
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);

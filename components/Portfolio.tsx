@@ -7,21 +7,21 @@ const projects = [
     location: "PT. Panca Kraft Pratama, Tangerang",
     category: "Industrial",
     year: "2025",
-    image: "p1.webp"
+    image: "/p1.webp"
   },
   {
     title: "Perbaikan Lapisan Beton Kolam Pengolahan Limbah Industri (IPAL)",
     location: "PT. Krakatau Steel, Cilegon - Banten",
     category: "Industrial",
     year: "2025",
-    image: "p2.webp"
+    image: "/p2.webp"
   },
   {
     title: "Pemasangan Waterproofing Kolam Renang & Kamar Mandi",
     location: "Hotel JENG RATU, Pangandaran",
     category: "Hospitality",
     year: "2024",
-    image: "p3.webp"
+    image: "/p3.webp"
   }
 ];
 
@@ -46,14 +46,9 @@ const Portfolio: React.FC = () => {
                   loading="lazy"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    // Log path yang gagal untuk debugging
-                    console.warn(`Gagal memuat: ${project.image}. Mencoba path alternatif...`);
-                    
-                    // Jika path tanpa slash gagal, coba dengan slash, jika gagal lagi pakai placeholder
-                    if (!target.src.includes('public/') && !target.src.includes('placehold.co')) {
-                       // Coba tambahkan public/ jika di environment non-build
-                       target.src = "public/" + project.image;
-                    } else if (!target.src.includes('placehold.co')) {
+                    // Jika path absolut pun gagal, berarti ada masalah penamaan file atau build
+                    if (!target.src.includes('placehold.co')) {
+                       console.error(`Gagal total memuat gambar: ${project.image}`);
                        target.src = `https://placehold.co/800x500/007bff/ffffff?text=${encodeURIComponent(project.title)}`;
                     }
                   }}
