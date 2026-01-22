@@ -51,13 +51,12 @@ const Portfolio: React.FC = () => {
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   alt={project.title}
                   loading="lazy"
-                  onLoad={() => console.log(`✅ Gambar berhasil dimuat: ${project.image}`)}
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    console.error(`❌ Gagal memuat: ${project.image}. Cek apakah file ada di /public${project.image}`);
+                    console.warn(`⚠️ Gambar tidak ditemukan: "${project.image}". Pastikan file ada di folder /public dan namanya huruf kecil semua.`);
                     
                     if (!target.src.includes('placehold.co')) {
-                       target.src = `https://placehold.co/800x600/007bff/ffffff?text=${encodeURIComponent(project.title)}`;
+                       target.src = `https://placehold.co/800x600/007bff/ffffff?text=Image+Not+Found`;
                     }
                   }}
                 />

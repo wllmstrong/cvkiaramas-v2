@@ -34,6 +34,7 @@ const Navbar = () => {
         <div className="hidden md:flex gap-8 text-[11px] font-black uppercase tracking-[0.2em]">
           <a href="#services" className={navLinkClass('text-white/80 hover:text-white')}>Layanan</a>
           <a href="#portfolio" className={navLinkClass('text-white/80 hover:text-white')}>Portofolio</a>
+          <a href="#casestudies" className={navLinkClass('text-white/80 hover:text-white')}>Studi Kasus</a>
           <a href="#legality" className={navLinkClass('text-white/80 hover:text-white')}>Legalitas</a>
           <a href="#contact" className={navLinkClass('text-white/80 hover:text-white')}>Kontak</a>
         </div>

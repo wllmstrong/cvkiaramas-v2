@@ -14,28 +14,33 @@ const DynamicBackground: React.FC = () => {
     if (images.length === 0) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 10000); 
+    }, 8000); 
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden bg-slate-950">
       {images.map((img, index) => (
-        <div
+        <img
           key={index}
-          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-[4000ms] ease-in-out ${
-            index === currentIndex ? 'opacity-40' : 'opacity-0'
+          src={img}
+          alt=""
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[3000ms] ease-in-out ${
+            index === currentIndex ? 'opacity-50 scale-110' : 'opacity-0 scale-100'
           }`}
           style={{
-            backgroundImage: `url(${img})`,
-            transform: index === currentIndex ? 'scale(1.1)' : 'scale(1)',
-            transition: 'opacity 4000ms ease-in-out, transform 20000ms linear'
+            transition: 'opacity 3000ms ease-in-out, transform 20000ms linear'
+          }}
+          onError={(e) => {
+            console.error(`❌ Background Image Gagal: "${img}". Pastikan file ada di folder /public/`);
+            (e.target as HTMLImageElement).style.display = 'none';
           }}
         />
       ))}
       
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/40 to-slate-950"></div>
-      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+      {/* Overlay Gradients */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/60 to-slate-950"></div>
+      <div className="absolute inset-0 opacity-20 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
     </div>
   );
 };
