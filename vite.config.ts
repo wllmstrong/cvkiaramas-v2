@@ -18,16 +18,8 @@ export default defineConfig({
       }
     }
   },
-  resolve: {
-    alias: {
-      '@': '/'
-    }
-  },
   server: {
     port: 3000,
-    strictPort: true,
-    hmr: {
-      overlay: true
-    }
+    strictPort: true
   }
 });

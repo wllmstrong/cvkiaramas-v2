@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- 🛡️ SECURITY & MODULE GUARD -->
-    <!-- Blokir importmap liar dengan memaksa browser hanya menerima map pertama yang kosong -->
+    <!-- 🛡️ SECURITY GUARD: Memblokir script asing & menonaktifkan importmap liar -->
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; object-src 'none';">
     <script type="importmap">
 {
   "imports": {
