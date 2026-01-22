@@ -2,7 +2,7 @@
 import React from 'react';
 
 const About: React.FC = () => {
-  const aboutImg = "/public/about.webp";
+  const aboutImg = "/about.webp";
 
   return (
     <div className="py-20 md:py-28 bg-white overflow-hidden" id="about">
@@ -37,7 +37,7 @@ const About: React.FC = () => {
                 onError={(e) => {
                    const target = e.target as HTMLImageElement;
                    if (!target.src.includes('placehold.co')) {
-                      target.src = "https://placehold.co/600x400/007bff/ffffff?text=About+Kiara+Mas";
+                      target.src = "https://placehold.co/600x400/007bff/ffffff?text=About+Image+Missing";
                    }
                 }}
               />
