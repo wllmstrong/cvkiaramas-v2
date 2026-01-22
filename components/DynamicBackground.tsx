@@ -20,7 +20,7 @@ const DynamicBackground: React.FC = () => {
           src={img}
           alt=""
           className={`absolute inset-0 w-full h-full object-cover transition-all duration-[3000ms] ease-in-out ${
-            index === currentIndex ? 'opacity-40 scale-110 blur-0' : 'opacity-0 scale-100 blur-sm'
+            index === currentIndex ? 'opacity-60 scale-110 blur-0' : 'opacity-0 scale-100 blur-sm'
           }`}
           style={{
             transition: 'opacity 3000ms ease-in-out, transform 20000ms linear, filter 3000ms ease-in-out'
@@ -28,8 +28,8 @@ const DynamicBackground: React.FC = () => {
         />
       ))}
       
-      {/* Overlay Gradients - Enhanced for better contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/90 via-slate-900/40 to-slate-950"></div>
+      {/* Overlay Gradients - Lightened for better visibility of the brightened background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/70 via-slate-900/30 to-slate-950/80"></div>
       <div className="absolute inset-0 opacity-10 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
     </div>
   );

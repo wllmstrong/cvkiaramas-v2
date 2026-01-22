@@ -1,9 +1,8 @@
-
 import React from 'react';
 
 const WhatsAppButton: React.FC = () => {
-  const phoneNumber = "628122052895";
-  const message = "Halo CV. Kiara Mas, saya tertarik dengan layanan jasa waterproofing Anda.";
+  const phoneNumber = "6285220102731";
+  const message = "Halo DADIEKWATERPROOFING (CV. Kiara Mas), saya tertarik dengan layanan jasa waterproofing Anda.";
   const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
@@ -15,7 +14,7 @@ const WhatsAppButton: React.FC = () => {
       aria-label="Chat via WhatsApp"
     >
       <div className="mr-3 bg-white px-4 py-2 rounded-lg shadow-lg text-sm font-bold text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block border border-gray-100">
-        Tanya Jasa Waterproofing
+        Konsultasi Teknis Gratis
       </div>
       <div className="w-14 h-14 bg-green-500 rounded-full shadow-2xl flex items-center justify-center text-white transition-transform hover:scale-110 active:scale-95 animate-bounce-slow">
         <svg 
