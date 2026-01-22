@@ -2,8 +2,7 @@
 import React from 'react';
 
 const About: React.FC = () => {
-  // Menggunakan string path untuk file di folder public
-  const aboutImg = "/about.webp";
+  const aboutImg = "about.webp";
 
   return (
     <div className="py-20 md:py-28 bg-white overflow-hidden" id="about">

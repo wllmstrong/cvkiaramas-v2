@@ -7,21 +7,21 @@ const projects = [
     location: "PT. Panca Kraft Pratama, Tangerang",
     category: "Industrial",
     year: "2025",
-    image: "/p1.webp"
+    image: "p1.webp"
   },
   {
     title: "Perbaikan Lapisan Beton Kolam Pengolahan Limbah Industri (IPAL)",
     location: "PT. Krakatau Steel, Cilegon - Banten",
     category: "Industrial",
     year: "2025",
-    image: "/p2.webp"
+    image: "p2.webp"
   },
   {
     title: "Pemasangan Waterproofing Kolam Renang & Kamar Mandi",
     location: "Hotel JENG RATU, Pangandaran",
     category: "Hospitality",
     year: "2024",
-    image: "/p3.webp"
+    image: "p3.webp"
   }
 ];
 
@@ -38,7 +38,7 @@ const Portfolio: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <div key={index} className="group flex flex-col bg-white rounded-[2.5rem] overflow-hidden shadow-sm border border-slate-100 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-              <div className="relative aspect-[16/10] overflow-hidden bg-slate-200">
+              <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
                 <img 
                   src={project.image} 
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
@@ -46,10 +46,13 @@ const Portfolio: React.FC = () => {
                   loading="lazy"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = `https://placehold.co/800x500/007bff/ffffff?text=${encodeURIComponent(project.title)}`;
+                    // Hanya tampilkan placeholder jika benar-benar gagal setelah mencoba path relatif
+                    if (!target.src.includes('placehold.co')) {
+                       target.src = `https://placehold.co/800x500/007bff/ffffff?text=${encodeURIComponent(project.title)}`;
+                    }
                   }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent opacity-40 group-hover:opacity-20 transition-opacity"></div>
                 <div className="absolute bottom-4 left-4">
                    <span className="px-3 py-1 bg-blue-600/90 backdrop-blur-sm text-white text-[9px] font-black uppercase tracking-wider rounded-full shadow-lg">
                     {project.category}
