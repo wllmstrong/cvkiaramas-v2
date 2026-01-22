@@ -2,10 +2,11 @@
 import React, { useState, useEffect } from 'react';
 
 const DynamicBackground: React.FC = () => {
+  // Path ini merujuk langsung ke folder 'public'
   const images = [
-    "https://i.ibb.co.com/DgRXssKJ/bg1.webp",
-    "https://i.ibb.co.com/Q7QPTrjD/bg2.webp",
-    "https://i.ibb.co.com/rqL1G3P/bg3.webp"
+    "/bg1.webp",
+    "/bg2.webp",
+    "/bg3.webp"
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);

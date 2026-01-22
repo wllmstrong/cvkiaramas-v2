@@ -2,8 +2,8 @@
 import React from 'react';
 
 const About: React.FC = () => {
-  // Menggunakan direct link yang telah dikoreksi
-  const aboutImg = "https://i.ibb.co.com/hR52ghHC/about.webp";
+  // Menggunakan string path untuk file di folder public
+  const aboutImg = "/about.webp";
 
   return (
     <div className="py-20 md:py-28 bg-white overflow-hidden" id="about">

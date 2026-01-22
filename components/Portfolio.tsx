@@ -7,21 +7,21 @@ const projects = [
     location: "PT. Panca Kraft Pratama, Tangerang",
     category: "Industrial",
     year: "2025",
-    image: "https://i.ibb.co.com/jPX6g61k/p1.webp"
+    image: "/p1.webp"
   },
   {
     title: "Perbaikan Lapisan Beton Kolam Pengolahan Limbah Industri (IPAL)",
     location: "PT. Krakatau Steel, Cilegon - Banten",
     category: "Industrial",
     year: "2025",
-    image: "https://i.ibb.co.com/LDHcFQLL/p2.webp"
+    image: "/p2.webp"
   },
   {
     title: "Pemasangan Waterproofing Kolam Renang & Kamar Mandi",
     location: "Hotel JENG RATU, Pangandaran",
     category: "Hospitality",
     year: "2024",
-    image: "https://i.ibb.co.com/VcrkZ1BB/p3.webp"
+    image: "/p3.webp"
   }
 ];
 
