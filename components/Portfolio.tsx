@@ -17,16 +17,16 @@ const projects = [
     image: IMAGES.portfolio[1].local
   },
   {
-    title: "Repair Kebocoran Kolam Renang",
-    location: "Puri Bintaro PB.1 / 30 Sektor 9 – Jakarta Selatan",
-    category: "Residential",
+    title: "Pemasangan Waterproofing Kolam Renang dan Kamar Mandi",
+    location: "Hotel Jeng Ratu - Pantai Barat Pangandaran",
+    category: "Hospitality",
     year: "2024",
     image: IMAGES.portfolio[2].local
   },
   {
-    title: "Pemasangan Waterproofing & Civil Work",
-    location: "Project Area Jawa Barat",
-    category: "Infrastructure",
+    title: "Repair Kebocoran Kolam Renang",
+    location: "Puri Bintaro - Jakarta Selatan",
+    category: "Residential",
     year: "2024",
     image: IMAGES.portfolio[3].local
   }
