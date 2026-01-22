@@ -16,7 +16,8 @@ import DynamicBackground from './components/DynamicBackground';
 
 const App: React.FC = () => {
   useEffect(() => {
-    console.log("%c🚀 CV. KIARA MAS - PROFILE LIVE", "color: white; background: #2563eb; padding: 6px 16px; border-radius: 8px; font-weight: 800; font-size: 14px;");
+    console.log("%c🛡️ MODULE GUARD: ACTIVE", "color: white; background: #3b82f6; padding: 6px 16px; border-radius: 8px; font-weight: 800;");
+    console.log("%c🚀 CV. KIARA MAS - SYSTEM READY", "color: white; background: #10b981; padding: 6px 16px; border-radius: 8px; font-weight: 800;");
   }, []);
 
   return (
